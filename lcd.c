@@ -76,12 +76,27 @@ void LCD_MoveCursor(unsigned char x, unsigned char y){
 
 void LCD_Init(void){
   //Set Analog State Off
-  if(LCD_RS_ANSEL != -1)LCD_RS_ANSEL = 0;
-  if(LCD_E_ANSEL != -1)LCD_E_ANSEL = 0;
-  if(LCD_D4_ANSEL != -1)LCD_D4_ANSEL = 0;
-  if(LCD_D5_ANSEL != -1)LCD_D5_ANSEL = 0;
-  if(LCD_D6_ANSEL != -1)LCD_D6_ANSEL = 0;
-  if(LCD_D7_ANSEL != -1)LCD_D7_ANSEL = 0;
+#ifdef LCD_RS_ANSEL
+  LCD_RS_ANSEL = 0;
+#endif
+  
+#ifdef LCD_E_ANSEL
+  LCD_E_ANSEL = 0;
+#endif
+  
+#ifdef LCD_D4_ANSEL
+  LCD_D4_ANSEL = 0;
+#endif
+  
+#ifdef LCD_D5_ANSEL
+  LCD_D5_ANSEL = 0;
+#endif
+#ifdef LCD_D6_ANSEL
+  LCD_D6_ANSEL = 0;
+#endif
+#ifdef LCD_D7_ANSEL
+  LCD_D7_ANSEL = 0;
+#endif
   
   // Set Tristate Registers
   LCD_RS_TRIS = TRISx_OUTPUT;// LCD_RS
