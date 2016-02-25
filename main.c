@@ -12,7 +12,7 @@ typedef enum enumState{
 
 volatile STATE state = ENTER;
 
-void main(){
+void main(void){
   unsigned LCD_Line = 1;// Used to track what line the cursor is on
   unsigned LCD_Character = 1;// Used to track what character in the line the cursor is on
   LCD_Init();
@@ -37,8 +37,8 @@ void main(){
   }
 }
 
-void __ISR(_CHANGE_NOTICE_VECTOR,IPL7SRS) _CNInterrupt{
-  PORTx;
-  IFS1bits.CNxIF = 0;// Put Flag Down
+void __ISR(_CHANGE_NOTICE_VECTOR,IPL7SRS) _CNInterrupt(void){
+  PORTE;
+  IFS1bits.CNEIF = 0;// Put Flag Down
   state = ENTER;
 }
