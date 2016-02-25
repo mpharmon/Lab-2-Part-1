@@ -23,7 +23,7 @@ void delayUs(unsigned int delay){
   IFS0bits.T2IF = 0;// Interrupt Flag Down
   IPC2bits.T2IP = 7;// Interrupt Priority Default
   T2CONbits.ON = 1;// Start Timer
-  while(IFS0bits.T2IF == 0){};// Wait Loop
+  while(IFS0bits.T2IF == 0){/*Hum Jeopardy Theme*/};// Wait Loop
   IFS0bits.T2IF = 0;
 }
 
