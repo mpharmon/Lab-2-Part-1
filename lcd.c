@@ -18,16 +18,6 @@
 #include "timer.h"
 #include <string.h>
 
-#define TRISx_INPUT   1
-#define TRISx_OUTPUT  0
-
-#define LCD_RS  LATCbits.LATC4
-#define LCD_E   LATCbits.LATC2
-#define LCD_D4  LATEbits.LATE1
-#define LCD_D5  LATEbits.LATE3
-#define LCD_D6  LATEbits.LATE5
-#define LCD_D7  LATEbits.LATE7
-
 void LCD_Write(unsigned char word, unsigned int commandType, unsigned int delayAfter){
   /*  Set LCD_RS  */
   if(commandType == 0)LCD_RS = 0;
@@ -89,13 +79,12 @@ void LCD_Init(void){
   ANSELEbits.ANSE7 = 0;
   
   // Set Tristate Registers
-  
-  TRISCbits.TRISC4 = TRISx_OUTPUT;// LCD_RS
-  TRISCbits.TRISC2 = TRISx_OUTPUT;// LCD_E
-  TRISEbits.TRISE7 = TRISx_OUTPUT;// LCD_D7
-  TRISEbits.TRISE5 = TRISx_OUTPUT;// LCD_D6
-  TRISEbits.TRISE3 = TRISx_OUTPUT;// LCD_D5
-  TRISEbits.TRISE1 = TRISx_OUTPUT;// LCD_D4
+  LCD_RS_TRIS = TRISx_OUTPUT;// LCD_RS
+  LCD_E_TRIS = TRISx_OUTPUT;// LCD_E
+  LCD_D4_TRIS = TRISx_OUTPUT;// LCD_D4
+  LCD_D4_TRIS = TRISx_OUTPUT;// LCD_D5
+  LCD_D6_TRIS = TRISx_OUTPUT;// LCD_D6
+  LCD_D7_TRIS = TRISx_OUTPUT;// LCD_D7
   
   //15mS Wait Required after Power On (delayUs takes maximum 5mS or 5000uS)
   delayUs(5000);delayUs(5000);delayUs(5000);

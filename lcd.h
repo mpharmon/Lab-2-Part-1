@@ -18,6 +18,22 @@
 #ifndef LCD_H_
 #define LCD_H_
 
+#define TRISx_INPUT   1
+#define TRISx_OUTPUT  0
+
+#define LCD_RS      LATCbits.LATC4
+#define LCD_RS_TRIS TRISCbits.TRISC4
+#define LCD_E       LATCbits.LATC2
+#define LCD_E_TRIS  TRISCbits.TRISC2
+#define LCD_D4      LATEbits.LATE1
+#define LCD_D4_TRIS TRISEbits.TRISE1
+#define LCD_D5      LATEbits.LATE3
+#define LCD_D5_TRIS TRISEbits.TRISE3
+#define LCD_D6      LATEbits.LATE5
+#define LCD_D6_TRIS TRISEbits.TRISE5
+#define LCD_D7      LATEbits.LATE7
+#define LCD_D7_TRIS TRISEbits.TRISE7
+  
 //Used by other LCD_* functions to write to the LCD Screen
 void LCD_Write(unsigned char word, unsigned int commandType, unsigned int delayAfter);
 
