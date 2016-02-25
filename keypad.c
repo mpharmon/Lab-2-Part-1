@@ -3,22 +3,27 @@
 
 void KeyPad_Init(void){
   // Configure Row Pins as ODC's
-  TRISxbits = TRIS_OUTPUT;// Set Output
-  ODCxbits = ODC_ACTIVE;
-  TRISxbits = TRIS_OUTPUT;// Set Output
-  ODCxbits = ODC_ACTIVE;
-  TRISxbits = TRIS_OUTPUT;// Set Output
-  ODCxbits = ODC_ACTIVE;
-  TRISxbits = TRIS_OUTPUT;// Set Output
-  ODCxbits = ODC_ACTIVE;
+  KEYPAD_ROW1_TRIS = TRIS_OUTPUT;// Set Output
+  KEYPAD_ROW1_ODC = ODC_ACTIVE;
+  
+  KEYPAD_ROW2_TRIS = TRIS_OUTPUT;// Set Output
+  KEYPAD_ROW2_ODC = ODC_ACTIVE;
+  
+  KEYPAD_ROW3_TRIS = TRIS_OUTPUT;// Set Output
+  KEYPAD_ROW3_ODC = ODC_ACTIVE;
+  
+  KEYPAD_ROW4_TRIS = TRIS_OUTPUT;// Set Output
+  KEYPAD_ROW4_ODC = ODC_ACTIVE;
   
   //Configure Column Pins as Inputs w/Pull-ups
-  TRISxbits = TRIS_INPUT;// Set Input
-  CNPUxbits = CNPU_ENABLE;// Enable Pull Up Resistor
-  TRISxbits = TRIS_INPUT;// Set Input
-  CNPUxbits = CNPU_ENABLE;// Enable Pull Up Resistor
-  TRISxbits = TRIS_INPUT;// Set Input
-  CNPUxbits = CNPU_ENABLE;// Enable Pull Up Resistor
+  KEYPAD_COL1_TRIS = TRIS_INPUT;// Set Input
+  KEYPAD_COL1_CNPU = CNPU_ENABLE;// Enable Pull Up Resistor
+  
+  KEYPAD_COL2_TRIS = TRIS_INPUT;// Set Input
+  KEYPAD_COL2_CNPU = CNPU_ENABLE;
+  
+  KEYPAD_COL3_TRIS = TRIS_INPUT;// Set Input
+  KEYPAD_COL3_CNPU = CNPU_ENABLE;
 }
 char KeyPad_Scan(void){
   //Scan First Row
