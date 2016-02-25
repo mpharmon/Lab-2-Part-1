@@ -4,22 +4,22 @@
 #define KEYPAD_ROW1       LATCbits.LATC1
 #define KEYPAD_ROW1_TRIS  TRISCbits.TRISC1
 #define KEYPAD_ROW1_ODC   ODCCbits.ODCC1
-#define KEYPAD_ROW1_ANSEL -1
+//#define KEYPAD_ROW1_ANSEL
 
 #define KEYPAD_ROW2       LATEbits.LATE0
 #define KEYPAD_ROW2_TRIS  TRISEbits.TRISE0
 #define KEYPAD_ROW2_ODC   ODCEbits.ODCE0
-#define KEYPAD_ROW2_ANSEL -1
+//#define KEYPAD_ROW2_ANSEL
 
 #define KEYPAD_ROW3       LATCbits.LATC4
 #define KEYPAD_ROW3_TRIS  TRISCbits.TRISC4
 #define KEYPAD_ROW3_ODC   ODCEbits.ODCE4
-#define KEYPAD_ROW3_ANSEL -1
+//#define KEYPAD_ROW3_ANSEL
 
 #define KEYPAD_ROW4       LATDbits.LATD10
 #define KEYPAD_ROW4_TRIS  TRISDbits.TRISD10
 #define KEYPAD_ROW4_ODC   ODCDbits.ODCD10
-#define KEYPAD_ROW4_ANSEL -1
+//#define KEYPAD_ROW4_ANSEL
 
 #define KEYPAD_COL1       PORTEbits.RE4
 #define KEYPAD_COL1_TRIS  TRISEbits.TRISE4
@@ -45,6 +45,8 @@
 
 #define ODC_ENABLE 1
 #define ODU_DISABLE 0
+
+#define ANSEL_DISABLED 0;
 
 void KeyPad_Init(void);
 char KeyPad_Scan(void);
