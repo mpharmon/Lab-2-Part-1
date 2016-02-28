@@ -76,36 +76,36 @@ void LCD_MoveCursor(unsigned char x, unsigned char y){
 
 void LCD_Init(void){
   //Set Analog State Off
-#ifdef LCD_RS_ANSEL
-  LCD_RS_ANSEL = 0;
-#endif
-  
-#ifdef LCD_E_ANSEL
-  LCD_E_ANSEL = 0;
-#endif
-  
-#ifdef LCD_D4_ANSEL
-  LCD_D4_ANSEL = 0;
-#endif
-  
-#ifdef LCD_D5_ANSEL
-  LCD_D5_ANSEL = 0;
-#endif
-#ifdef LCD_D6_ANSEL
-  LCD_D6_ANSEL = 0;
-#endif
-#ifdef LCD_D7_ANSEL
-  LCD_D7_ANSEL = 0;
-#endif
-  
-  // Set Tristate Registers
   LCD_RS_TRIS = TRISx_OUTPUT;// LCD_RS
-  LCD_E_TRIS = TRISx_OUTPUT;// LCD_E
-  LCD_D4_TRIS = TRISx_OUTPUT;// LCD_D4
-  LCD_D4_TRIS = TRISx_OUTPUT;// LCD_D5
-  LCD_D6_TRIS = TRISx_OUTPUT;// LCD_D6
-  LCD_D7_TRIS = TRISx_OUTPUT;// LCD_D7
+  #ifdef LCD_RS_ANSEL
+    LCD_RS_ANSEL = 0;
+  #endif
   
+  LCD_E_TRIS = TRISx_OUTPUT;// LCD_E
+  #ifdef LCD_E_ANSEL
+    LCD_E_ANSEL = 0;
+  #endif
+  
+  LCD_D4_TRIS = TRISx_OUTPUT;// LCD_D4
+  #ifdef LCD_D4_ANSEL
+    LCD_D4_ANSEL = 0;
+  #endif
+  
+  LCD_D5_TRIS = TRISx_OUTPUT;// LCD_D5
+  #ifdef LCD_D5_ANSEL
+    LCD_D5_ANSEL = 0;
+  #endif
+  
+  LCD_D6_TRIS = TRISx_OUTPUT;// LCD_D7
+  #ifdef LCD_D6_ANSEL
+    LCD_D6_ANSEL = 0;
+  #endif
+  
+  LCD_D7_TRIS = TRISx_OUTPUT;// LCD_D5
+  #ifdef LCD_D7_ANSEL
+    LCD_D7_ANSEL = 0;
+  #endif
+
   //15mS Wait Required after Power On (delayUs takes maximum 5mS or 5000uS)
   delayUs(5000);delayUs(5000);delayUs(5000);
   

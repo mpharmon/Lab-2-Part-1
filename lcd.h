@@ -31,13 +31,16 @@
 
 #define LCD_D4        LATEbits.LATE1
 #define LCD_D4_TRIS   TRISEbits.TRISE1
-//#define LCD_D4_ANSEL  
+//#define LCD_D4_ANSEL
+
 #define LCD_D5        LATEbits.LATE3
 #define LCD_D5_TRIS   TRISEbits.TRISE3
-//#define LCD_D5_ANSEL  
+//#define LCD_D5_ANSEL
+
 #define LCD_D6        LATEbits.LATE5
 #define LCD_D6_TRIS   TRISEbits.TRISE5
-//#define LCD_D6_ANSEL  
+//#define LCD_D6_ANSEL
+
 #define LCD_D7        LATEbits.LATE7
 #define LCD_D7_TRIS   TRISEbits.TRISE7
 #define LCD_D7_ANSEL  ANSELEbits.ANSE7
